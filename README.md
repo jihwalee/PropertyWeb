@@ -8,12 +8,28 @@ NAI Propertree에서 사용하는 신사업 웹서비스.
 ## Prerequisites
 
 1. Install [node.js](http://nodejs.org), [MongoDB](http://mongodb.com) properly.
-2. Install npm packages.
+2. Clone repository and download npm pakages.
+``` bash
+$ git clone https://github.com/shuride/nai_propertree.git
+$ cd nai_propertree
+$ npm install
+```
+
+3. Install npm packages.
 ``` bash
 $ npm install -g bower
 ```
 
 ## Start the server
+1. Make sure that MongoDB is running.
+``` bash
+$ mongod
+```
+
+2. Start the node.js server
 ``` bash
 $ node server.js
 ```
+
+3. Open brower http://localhost:3000/
+
