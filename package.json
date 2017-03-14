@@ -23,5 +23,8 @@
     "morgan": "~1.2.2",
     "method-override": "~2.1.2"
   },
-  "license": ""
+  "license": "",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }

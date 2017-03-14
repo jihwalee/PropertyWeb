@@ -1,0 +1,81 @@
+<!doctype html>
+<!-- Declares meanMapApp as the starting Angular module -->
+<html class="no-js" ng-app="meanMapApp">
+<head>
+    <meta charset="utf-8">
+    <title>NAI Propertree Google Map Integration</title>
+    <meta name="description" content="NAI Propertree">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css"/>
+    <link rel="stylesheet" href="style.css"/>
+
+    <!-- Holder JS -->
+    <script src="../bower_components/holderjs/holder.js"></script>
+
+    <!-- Google Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCiZpA-dJ4JxIbzQltfW-b88L9JB25alUk"></script>
+
+    <!-- Modernizr -->
+    <script src="../bower_components/modernizr/bin/modernizr"></script>
+
+    <!-- JS Source -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script src="../bower_components/angular-route/angular-route.js"></script>
+    <script src="../bower_components/angularjs-geolocation/dist/angularjs-geolocation.min.js"></script>
+
+    <!-- Angular Files -->
+    <script src="js/app.js"></script>
+    <script src="js/gservice.js"></script>
+    <script src="js/addCtrl.js"></script>
+    <script src="js/queryCtrl.js"></script>
+    <script src="js/headerCtrl.js"></script>
+</head>
+
+<body>
+<!--[if lt IE 10]>
+<p class="browsehappy"><strong>오래된</strong> 웹 브라우저를 사용하고 계십니다.
+    더 나은 서비스를 위해 <a href="https://www.google.com/chrome/">여기를 눌러</a>브라우저 업데이트를 부탁드립니다.</p>
+<![endif]-->
+
+<div class="container">
+    <!-- Header Menu. Note use of headerCtrl -->
+    <div class="header" ng-controller="headerCtrl">
+
+        <!-- Header items are made active upon selection -->
+        <ul class="nav nav-pills pull-right">
+            <li ng-class="{ active: isActive('/join')}"><a href="/#/join">팀에 합류하기</a></li>
+            <li ng-class="{ active: isActive('/find')}"><a href="/#/find">동료 찾기</a></li>
+        </ul>
+
+        <!-- Header Title -->
+        <h3 class="text-muted">NAI Propertree</h3>
+    </div>
+
+    <!-- Map and Side Panel -->
+    <div class="row content">
+
+        <!-- Google Map -->
+        <div class="col-md-7">
+            <div id="map"></div>
+        </div>
+
+        <!-- Side Panel (Controlled by ng-view) -->
+        <div ng-view></div>
+
+    </div>
+    <hr/>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p class="text-center"><span class="glyphicon glyphicon-check"></span> Powered by ActionPower -
+            <a href="http://actionpower.kr/">actionpower.kr</a>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
