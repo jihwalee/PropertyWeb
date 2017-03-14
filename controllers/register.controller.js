@@ -15,7 +15,7 @@ router.post('/', function (req, res) {
         json: true
     }, function (error, response, body) {
         if (error) {
-            return res.render('register', { error: 'An error occurred' });
+            return res.render('register', { error: '가입할 수 없습니다.' });
         }
 
         if (response.statusCode !== 200) {
@@ -28,7 +28,7 @@ router.post('/', function (req, res) {
         }
 
         // return to login page with success message
-        req.session.success = 'Registration successful';
+        req.session.success = '가입이 완료되었습니다.';
         return res.redirect('/login');
     });
 });

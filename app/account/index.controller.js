@@ -24,7 +24,7 @@
         function saveUser() {
             UserService.Update(vm.user)
                 .then(function () {
-                    FlashService.Success('User updated');
+                    FlashService.Success('사용자 정보가 수정되었습니다.');
                 })
                 .catch(function (error) {
                     FlashService.Error(error);
