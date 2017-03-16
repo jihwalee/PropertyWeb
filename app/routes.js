@@ -61,15 +61,18 @@ module.exports = function (app) {
 
         // ...include filter by Max Distance (converting miles to meters)
         if (distance) {
-
             // Using MongoDB's geospatial querying features. (Note how coordinates are set [long, lat]
-            query = query.where('location').near({
-                center: {type: 'Point', coordinates: [long, lat]},
+            query = query
+                .where('location')
+                .near({
+                    center: {
+                        type: 'Point',
+                        coordinates: [long, lat]
+                    },
 
-                // Converting meters to miles. Specifying spherical geometry (for globe)
-                maxDistance: distance * 1609.34, spherical: true
-            });
-
+                    // Specifying spherical geometry (for globe)
+                    maxDistance: distance, spherical: true
+                });
         }
 
         // ...include filter by Gender (all options)

@@ -2,6 +2,8 @@
 var app = angular.module('meanMapApp', ['addCtrl', 'queryCtrl', 'headerCtrl', 'geolocation', 'gservice', 'ngRoute'])
 
 // Configures Angular routing -- showing the relevant view and controller when needed.
+// Angular's routeProvider will automatically replace 'ng-view' with the correct HTML partial.
+
     .config(function ($routeProvider) {
 
         // Join Team Control Panel
