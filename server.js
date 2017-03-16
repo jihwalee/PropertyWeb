@@ -11,9 +11,10 @@ var config = require('config.json');
 var mongoose = require('mongoose');
 var morgan = require('morgan');
 var methodOverride = require('method-override');
-var port = process.env.PORT || 3000;
 var database = require('./app/config');
+
 var app = express();
+var port = process.env.PORT || 3000;
 
 
 // Express Configuration
@@ -44,6 +45,7 @@ app.set('views', __dirname + '/views');
 // ------------------------------------------------------
 require('./app/routes.js')(app);
 
+/*
 // routes
 app.use('/login', require('./controllers/login.controller'));
 app.use('/register', require('./controllers/register.controller'));
@@ -51,11 +53,12 @@ app.use('/app', require('./controllers/app.controller'));
 app.use('/api/users', require('./controllers/api/users.controller'));
 
 
-
 // make '/app' default route
 app.get('/', function (req, res) {
     return res.redirect('/app');
 });
+*/
+
 
 // start server
 //var server = app.listen(3000, function () {

@@ -6,73 +6,82 @@
 
         <!-- Panel Title -->
         <div class="panel-heading">
-            <h2 class="panel-title text-center">Find Teammates! (Map Query) <span class="glyphicon glyphicon-search"></span></h2>
+            <h2 class="panel-title text-center">동료 찾기!
+                <span class="glyphicon glyphicon-search"></span></h2>
         </div>
 
         <!-- Panel Body -->
         <div class="panel-body">
 
             <!-- Creates Form -->
-            <form name ="queryForm">
+            <form name="queryForm">
 
                 <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
                 <div class="form-group">
-                    <label for="latitude">Your Latitude</label>
-                    <input type="text" class="form-control" id="latitude" placeholder="39.5" ng-model="formData.latitude" readonly>
+                    <label for="latitude">위도</label>
+                    <input type="text" class="form-control" id="latitude" placeholder="37.475"
+                           ng-model="formData.latitude" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="longitude">Your Longitude</label>
-                    <input type="text" class="form-control" id="longitude" placeholder="-98.35" ng-model="formData.longitude" readonly>
+                    <label for="longitude">경도</label>
+                    <input type="text" class="form-control" id="longitude" placeholder="126.988"
+                           ng-model="formData.longitude" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="distance">Max. Distance (miles)</label>
-                    <input type="text" class="form-control" id="distance" placeholder="500" ng-model="formData.distance">
+                    <label for="distance">최대 거리 (miles)</label>
+                    <input type="text" class="form-control" id="distance" placeholder="500"
+                           ng-model="formData.distance">
                 </div>
 
                 <!-- Note ng-true-value which translates check values into explicit gender strings -->
                 <label>Gender</label>
                 <div class="form-group">
                     <label class="checkbox-inline">
-                        <input type="checkbox" name="optionsRadios" id="checkmale" value="Male" ng-model="formData.male" ng-true-value = "'Male'">
-                        Male
+                        <input type="checkbox" name="optionsRadios" id="checkmale" value="Male" ng-model="formData.male"
+                               ng-true-value="'Male'">
+                        남
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" name="optionsRadios" id="checkfemale" value="Female" ng-model="formData.female" ng-true-value="'Female'">
-                        Female
+                        <input type="checkbox" name="optionsRadios" id="checkfemale" value="Female"
+                               ng-model="formData.female" ng-true-value="'Female'">
+                        녀
                     </label>
                     <label class="checkbox-inline">
-                        <input type="checkbox" name="optionsRadios" id="checkother" value="What's it to ya?" ng-model="formData.other" ng-true-value="'What\'s it to ya?'">
-                        What's it to ya?
+                        <input type="checkbox" name="optionsRadios" id="checkother" value="Not to say"
+                               ng-model="formData.other" ng-true-value="'Not to say'">
+                        대답하지 않겠습니다
                     </label>
                 </div>
                 <div class="form-group">
-                    <label for="minage">Min. Age</label>
+                    <label for="minage">최소 나이</label>
                     <input type="number" class="form-control" id="minage" placeholder="5" ng-model="formData.minage">
                 </div>
                 <div class="form-group">
-                    <label for="maxage">Max Age</label>
+                    <label for="maxage">최대 나이</label>
                     <input type="number" class="form-control" id="maxage" placeholder="80" ng-model="formData.maxage">
                 </div>
                 <div class="form-group">
-                    <label for="favlang">Favorite Language</label>
-                    <input type="text" class="form-control" id="favlang" placeholder="Fortran" ng-model="formData.favlang">
+                    <label for="favlang">선호 언어</label>
+                    <input type="text" class="form-control" id="favlang" placeholder="Fortran"
+                           ng-model="formData.favlang">
                 </div>
                 <div class="form-group">
                     <div class="checkbox">
                         <label>
-                            <input type="checkbox" name="verified" id="radiomale" value="True" ng-model="formData.verified"> <strong>Include Only HTML5 Verified Locations?</strong>
+                            <input type="checkbox" name="verified" id="radiomale" value="True"
+                                   ng-model="formData.verified"> <strong>HTML5 인증된 위치만 찾기</strong>
                         </label>
                     </div>
                 </div>
 
                 <!-- Query button. Note that its tied to queryUsers() function from queryCtrl.  -->
-                <button type="submit" class="btn btn-danger btn-block" ng-click="queryUsers()">Search</button>
+                <button type="submit" class="btn btn-danger btn-block" ng-click="queryUsers()">찾기</button>
             </form>
         </div>
 
         <!-- Footer panel for displaying count. Note how it will only display if queryCount is greater than 0 -->
         <div ng-show="queryCount>0" class="panel-footer">
-                <p class="text-center">Hot Dang! We Found {{queryCount}} Teammates.</p>
+            <p class="text-center">검색 결과 {{queryCount}} 동료를 찾았습니다.</p>
         </div>
     </div>
 </div>

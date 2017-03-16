@@ -17,8 +17,8 @@
 
                 <!-- Text Boxes and Other User Inputs. Note ng-model binds the values to Angular $scope -->
                 <div class="form-group">
-                    <label for="username">아이디 <span class="badge">필수 항목</span></label>
-                    <input type="text" class="form-control" id="username" placeholder="OldandGold"
+                    <label for="username">아이디 <span class="badge">필수</span></label>
+                    <input type="text" class="form-control" id="username" placeholder="아이디"
                            ng-model="formData.username" required>
                 </div>
                 <label class="radio control-label">성별</label>
@@ -37,7 +37,7 @@
                 </div>
                 <div class="radio">
                     <label>
-                        <input type="radio" name="optionsRadios" id="radioother" value="What's it to ya?"
+                        <input type="radio" name="optionsRadios" id="radioother" value="Not to say"
                                ng-model="formData.gender">
                         공개하지 않겠습니다
                     </label>
