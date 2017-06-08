@@ -1,6 +1,6 @@
 // Dependencies
-var mongoose = require('mongoose');
-var User = require('./model.js');
+//var mongoose = require('mongoose');
+//var User = require('./model.js');
 
 
 // Opens App Routes
@@ -25,9 +25,9 @@ module.exports = function (app, passport) {
         res.redirect('/');
     });
 
-// =============================================================================
-// AUTHENTICATE (FIRST LOGIN) ==================================================
-// =============================================================================
+    // =============================================================================
+    // AUTHENTICATE (FIRST LOGIN) ==================================================
+    // =============================================================================
 
     // locally --------------------------------
     // LOGIN ===============================
@@ -188,8 +188,8 @@ module.exports = function (app, passport) {
         });
     });
 
-
     /*
+
     // GET Routes
     // --------------------------------------------------------
     // Retrieve records for all users in the db
@@ -309,7 +309,9 @@ module.exports = function (app, passport) {
                 res.json(req.body);
         });
     });
+
     */
+
 };
 
 
