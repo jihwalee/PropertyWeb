@@ -38,22 +38,21 @@ app.use(passport.initialize());
 app.use(passport.session());    // persistent login sessions
 app.use(flash());   // use connect-flash for flash messages stored in session
 app.use(session({secret: config.secret, resave: true, saveUninitialized: true}));
-app.use(methodOverride());
+//app.use(methodOverride());
 
-app.use('/bower_components', express.static(__dirname + '/bower_components')); // Use BowerComponents
+//app.use('/bower_components', express.static(__dirname + '/bower_components')); // Use BowerComponents
 app.set('view engine', 'ejs');
 //app.set('views', __dirname + '/views');
 
 // use JWT auth to secure the api
-app.use('/api', expressJwt({secret: config.secret}).unless({path: ['/api/users/authenticate', '/api/users/register']}));
+//app.use('/api', expressJwt({secret: config.secret}).unless({path: ['/api/users/authenticate', '/api/users/register']}));
 
 // sets the static files location to public
 //app.use(express.static(__dirname + '/public'));
 
 // Routes
 // ------------------------------------------------------
-require('./app/routes.js')(app, passport);  // load our routes and pass in our app
-// and fully configured passport
+require('./app/routes.js')(app, passport);  // load our routes and pass in our app and fully configured passport
 
 
 // Listen
